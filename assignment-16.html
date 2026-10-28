@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .calculator {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 380px;
+            max-width: 100%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4f46e5;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f2ff;
+            border-radius: 8px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <h1>Grade Calculator</h1>
+
+        <form id="gradeForm">
+            <label for="marks1">Subject 1 Marks (out of 100)</label>
+            <input type="number" id="marks1" min="0" max="100" required>
+
+            <label for="marks2">Subject 2 Marks (out of 100)</label>
+            <input type="number" id="marks2" min="0" max="100" required>
+
+            <label for="marks3">Subject 3 Marks (out of 100)</label>
+            <input type="number" id="marks3" min="0" max="100" required>
+
+            <button type="submit">Calculate Grade</button>
+        </form>
+
+        <div id="result" aria-live="polite">
+            Enter your marks to calculate your grade.
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("gradeForm");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const marks1 = Number(document.getElementById("marks1").value);
+            const marks2 = Number(document.getElementById("marks2").value);
+            const marks3 = Number(document.getElementById("marks3").value);
+
+            const result = document.getElementById("result");
+
+            if (
+                marks1 < 0 || marks1 > 100 ||
+                marks2 < 0 || marks2 > 100 ||
+                marks3 < 0 || marks3 > 100
+            ) {
+                result.textContent = "Please enter marks between 0 and 100.";
+                return;
+            }
+
+            const total = marks1 + marks2 + marks3;
+            const percentage = total / 3;
+
+            let grade;
+            let status;
+
+            if (marks1 < 33 || marks2 < 33 || marks3 < 33) {
+                grade = "F";
+                status = "Fail";
+            } else if (percentage >= 90) {
+                grade = "A+";
+                status = "Pass";
+            } else if (percentage >= 80) {
+                grade = "A";
+                status = "Pass";
+            } else if (percentage >= 70) {
+                grade = "B";
+                status = "Pass";
+            } else if (percentage >= 60) {
+                grade = "C";
+                status = "Pass";
+            } else if (percentage >= 33) {
+                grade = "D";
+                status = "Pass";
+            } else {
+                grade = "F";
+                status = "Fail";
+            }
+
+            result.innerHTML =
+                "Total Marks: " + total + " / 300<br>" +
+                "Percentage: " + percentage.toFixed(2) + "%<br>" +
+                "Grade: " + grade + "<br>" +
+                "Result: " + status;
+        });
+    </script>
+
+</body>
+  </html>
