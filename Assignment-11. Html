@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Grid</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fa;
+            color: #333;
+        }
+
+        header {
+            background: #263b80;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        .product-grid {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #263b80;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product button {
+            background: #405de6;
+            color: white;
+            border: none;
+            padding: 11px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .product button:hover {
+            background: #263b80;
+        }
+
+        @media (max-width: 750px) {
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Our Products</h1>
+        <p>Choose your favourite products</p>
+    </header>
+
+    <main class="product-grid">
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80"
+                 alt="Headphones">
+            <h2>Headphones</h2>
+            <p class="price">₹999</p>
+            <button type="button">Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80"
+                 alt="Watch">
+            <h2>Smart Watch</h2>
+            <p class="price">₹1,499</p>
+            <button type="button">Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80"
+                 alt="Sports shoes">
+            <h2>Sports Shoes</h2>
+            <p class="price">₹1,299</p>
+            <button type="button">Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=500&q=80"
+                 alt="Handbag">
+            <h2>Handbag</h2>
+            <p class="price">₹899</p>
+            <button type="button">Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=500&q=80"
+                 alt="Camera">
+            <h2>Camera</h2>
+            <p class="price">₹4,999</p>
+            <button type="button">Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=500&q=80"
+                 alt="Clothing">
+            <h2>Fashion Wear</h2>
+            <p class="price">₹799</p>
+            <button type="button">Buy Now</button>
+        </div>
+
+    </main>
+
+</body>
+</html>
