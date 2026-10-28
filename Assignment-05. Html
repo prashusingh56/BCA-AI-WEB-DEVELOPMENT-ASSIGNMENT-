@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile Card</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: white;
+            width: 320px;
+            max-width: 100%;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 3px solid #eeeeff;
+        }
+
+        .profile-image {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #667eea;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 42px;
+            font-weight: bold;
+            border: 4px solid #dddfff;
+        }
+
+        .profile-card h1 {
+            font-size: 25px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .role {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .profile-button {
+            display: inline-block;
+            text-decoration: none;
+            background: #667eea;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .profile-button:hover {
+            background: #764ba2;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-card">
+
+        <div class="profile-image">RS</div>
+
+        <h1>Ratna Singh</h1>
+
+        <p class="role">BCA Artificial Intelligence Student</p>
+
+        <p class="description">
+            I am a student interested in programming,
+            artificial intelligence, and web development.
+            I enjoy learning new technologies and building projects.
+        </p>
+
+        <a href="mailto:student@example.com" class="profile-button">
+            Contact Me
+        </a>
+
+    </div>
+
+</body>
+</html>
