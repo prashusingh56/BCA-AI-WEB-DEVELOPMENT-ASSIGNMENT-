@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .resume {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px #cccccc;
+        }
+
+        header {
+            background: #183153;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        main {
+            padding: 25px;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: #183153;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .skills span {
+            display: inline-block;
+            background: #dcecff;
+            color: #183153;
+            padding: 8px 12px;
+            margin: 4px;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            background: #183153;
+            color: white;
+            padding: 12px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 8px;
+            }
+
+            main {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="resume">
+
+    <header>
+        <h1>Your Name</h1>
+        <p>BCA Artificial Intelligence Student</p>
+        <p>Email: yourname@example.com</p>
+        <p>Phone: Your Phone Number</p>
+        <p>Location: Your City</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Career Objective</h2>
+            <p>
+                Motivated BCA AI student eager to learn programming,
+                improve technical skills and develop useful applications.
+            </p>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <ul>
+                <li>BCA Artificial Intelligence - Invertis University (2025-2028)</li>
+                <li>Class 12 - Your School Name</li>
+                <li>Class 10 - Your School Name</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Java</span>
+                <span>Python</span>
+                <span>GitHub</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <ul>
+                <li>Student Marks Calculator</li>
+                <li>Personal Webpage using HTML and CSS</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Strengths</h2>
+            <ul>
+                <li>Problem-solving</li>
+                <li>Teamwork</li>
+                <li>Willingness to learn</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Declaration</h2>
+            <p>I declare that the information provided above is true to the best of my knowledge.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Thank you for reviewing my resume!</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
