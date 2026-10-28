@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            color: #333;
+        }
+
+        header {
+            background: #243b80;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        .products {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            background: #e7ebff;
+            font-size: 60px;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 18px;
+        }
+
+        .product-card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #243b80;
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-card button {
+            background: #405de6;
+            color: white;
+            border: none;
+            padding: 11px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background: #243b80;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Online Store</h1>
+        <p>Explore our latest products</p>
+    </header>
+
+    <main class="products">
+
+        <div class="product-card">
+            <div class="product-image">🎧</div>
+            <h2>Headphones</h2>
+            <p class="price">₹999</p>
+            <button type="button">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">⌚</div>
+            <h2>Smart Watch</h2>
+            <p class="price">₹1,499</p>
+            <button type="button">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">🎒</div>
+            <h2>Travel Bag</h2>
+            <p class="price">₹799</p>
+            <button type="button">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">👟</div>
+            <h2>Sports Shoes</h2>
+            <p class="price">₹1,299</p>
+            <button type="button">Buy Now</button>
+        </div>
+
+    </main>
+
+</body>
+</html>
