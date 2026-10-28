@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Photo Gallery</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fa;
+            padding: 25px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #263b80;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #666;
+        }
+
+        .gallery {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .photo {
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s;
+        }
+
+        .photo:hover {
+            transform: scale(1.03);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Photo Gallery</h1>
+        <p>A collection of beautiful photographs</p>
+    </header>
+
+    <main class="gallery">
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+                 alt="Beautiful mountain landscape">
+        </div>
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80"
+                 alt="Mountain lake">
+        </div>
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80"
+                 alt="Green forest">
+        </div>
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+                 alt="Beautiful beach">
+        </div>
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=600&q=80"
+                 alt="Wildlife in nature">
+        </div>
+
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=600&q=80"
+                 alt="Ocean waves">
+        </div>
+
+    </main>
+
+</body>
+  </html>
