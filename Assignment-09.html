@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fa;
+            color: #333;
+        }
+
+        .dashboard {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 230px;
+            background: #243b80;
+            color: white;
+            padding: 25px 18px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 35px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 13px;
+            margin-bottom: 8px;
+            border-radius: 7px;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: #405de6;
+        }
+
+        .main-content {
+            flex: 1;
+            min-width: 0;
+            padding: 30px;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .topbar h1 {
+            color: #243b80;
+        }
+
+        .welcome {
+            color: #666;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .stat-card h3 {
+            color: #777;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .stat-card p {
+            font-size: 28px;
+            font-weight: bold;
+            color: #405de6;
+        }
+
+        .activity {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .activity h2 {
+            margin-bottom: 20px;
+        }
+
+        .activity p {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            line-height: 1.5;
+        }
+
+        .activity p:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 800px) {
+            .dashboard {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .sidebar h2 {
+                margin-bottom: 15px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 500px) {
+            .main-content {
+                padding: 18px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <h2>My Dashboard</h2>
+
+            <nav>
+                <a href="#home" class="active">Home</a>
+                <a href="#overview">Overview</a>
+                <a href="#projects">Projects</a>
+                <a href="#reports">Reports</a>
+                <a href="#settings">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="topbar" id="home">
+                <h1>Dashboard Overview</h1>
+                <p class="welcome">Welcome back!</p>
+            </div>
+
+            <section class="stats" id="overview">
+
+                <div class="stat-card">
+                    <h3>Total Students</h3>
+                    <p>250</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Total Projects</h3>
+                    <p>48</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Completed Tasks</h3>
+                    <p>120</p>
+                </div>
+
+            </section>
+
+            <section class="activity" id="projects">
+                <h2>Recent Activity</h2>
+
+                <p>✔ Profile card project completed.</p>
+                <p>✔ Responsive menu created.</p>
+                <p>✔ Product listing layout designed.</p>
+                <p>✔ Dashboard layout updated.</p>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+              </html>
