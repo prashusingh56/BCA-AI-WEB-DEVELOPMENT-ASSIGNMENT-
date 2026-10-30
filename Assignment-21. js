@@ -1,0 +1,87 @@
+// Assignment 21: Scope and Hoisting Prediction Worksheet
+
+// Example 1: var Hoisting
+
+console.log(a);
+
+var a = 10;
+
+// Output: undefined
+// Explanation: var is hoisted and initialized with undefined.
+
+
+// Example 2: let Hoisting
+
+let b = 20;
+
+console.log(b);
+
+// Output: 20
+// Explanation: let is block-scoped and can be accessed after declaration.
+
+
+// Example 3: Block Scope
+
+{
+    let x = 50;
+    console.log(x);
+}
+
+// Output: 50
+// Explanation: x is accessible inside its block only.
+
+
+// Example 4: Function Scope
+
+function showMessage() {
+    var message = "Hello JavaScript";
+    console.log(message);
+}
+
+showMessage();
+
+// Output: Hello JavaScript
+// Explanation: var declared inside a function has function scope.
+
+
+// Example 5: Const Variable
+
+const pi = 3.14;
+
+console.log(pi);
+
+// Output: 3.14
+// Explanation: const variables cannot be reassigned.
+
+
+// Example 6: Function Hoisting
+
+greet();
+
+function greet() {
+    console.log("Welcome to JavaScript");
+}
+
+// Output: Welcome to JavaScript
+// Explanation: Function declarations are hoisted.
+
+
+// Example 7: Local and Global Scope
+
+let student = "Ratna";
+
+function displayStudent() {
+    let course = "BCA";
+    console.log(student);
+    console.log(course);
+}
+
+displayStudent();
+
+// Output:
+// Ratna
+// BCA
+
+// Explanation:
+// student is a global variable.
+// course is a local variable.
