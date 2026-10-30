@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loop Problems</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4ff;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3730a3;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        button {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        .output {
+            background: #eef2ff;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 5px;
+            overflow-wrap: anywhere;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Beginner Loop Problems</h1>
+
+        <div class="card">
+            <h2>1. Print Numbers from 1 to 10</h2>
+            <p>Uses a for loop.</p>
+            <button onclick="printNumbers()">Run Program</button>
+            <div class="output" id="output1">Output appears here.</div>
+        </div>
+
+        <div class="card">
+            <h2>2. Calculate the Sum from 1 to 10</h2>
+            <p>Uses a while loop.</p>
+            <button onclick="calculateSum()">Run Program</button>
+            <div class="output" id="output2">Output appears here.</div>
+        </div>
+
+        <div class="card">
+            <h2>3. Print a Multiplication Table</h2>
+            <label for="number">Enter a number:</label>
+            <input type="number" id="number" value="5" min="1" max="100">
+            <button onclick="multiplicationTable()">Run Program</button>
+            <div class="output" id="output3">Output appears here.</div>
+        </div>
+
+        <div class="card">
+            <h2>4. Calculate Factorial</h2>
+            <p>Uses a do...while loop.</p>
+            <label for="factorialNumber">Enter a number (0–18):</label>
+            <input type="number" id="factorialNumber" value="5" min="0" max="18">
+            <button onclick="calculateFactorial()">Run Program</button>
+            <div class="output" id="output4">Output appears here.</div>
+        </div>
+    </div>
+
+    <script>
+        function printNumbers() {
+            let output = [];
+
+            for (let i = 1; i <= 10; i++) {
+                output.push(i);
+            }
+
+            document.getElementById("output1").textContent =
+                output.join(", ");
+        }
+
+        function calculateSum() {
+            let i = 1;
+            let sum = 0;
+
+            while (i <= 10) {
+                sum += i;
+                i++;
+            }
+
+            document.getElementById("output2").textContent =
+                "Sum = " + sum;
+        }
+
+        function multiplicationTable() {
+            const number = Number(
+                document.getElementById("number").value
+            );
+
+            const output = document.getElementById("output3");
+
+            if (!Number.isInteger(number) || number < 1 || number > 100) {
+                output.textContent = "Enter a whole number from 1 to 100.";
+                return;
+            }
+
+            let table = [];
+
+            for (let i = 1; i <= 10; i++) {
+                table.push(number + " × " + i + " = " + number * i);
+            }
+
+            output.textContent = table.join(" | ");
+        }
+
+        function calculateFactorial() {
+            const number = Number(
+                document.getElementById("factorialNumber").value
+            );
+
+            const output = document.getElementById("output4");
+
+            if (!Number.isInteger(number) || number < 0 || number > 18) {
+                output.textContent = "Enter a whole number from 0 to 18.";
+                return;
+            }
+
+            let i = 1;
+            let factorial = 1;
+
+            do {
+                if (i <= number) {
+                    factorial *= i;
+                }
+
+                i++;
+            } while (i <= number);
+
+            output.textContent = number + "! = " + factorial;
+        }
+    </script>
+
+</body>
+  </html>
