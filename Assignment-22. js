@@ -1,0 +1,81 @@
+// Assignment 22: Validation Utility Library
+
+// 1. Check whether a value is empty
+function isEmpty(value) {
+    if (value === null || value === undefined) {
+        return true;
+    }
+
+    if (typeof value === "string" && value.trim() === "") {
+        return true;
+    }
+
+    return false;
+}
+
+
+// 2. Validate Email
+function isValidEmail(email) {
+    if (typeof email !== "string" || isEmpty(email)) {
+        return false;
+    }
+
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return pattern.test(email);
+}
+
+
+// 3. Validate Age
+function isValidAge(age) {
+    if (typeof age !== "number" || !Number.isFinite(age)) {
+        return false;
+    }
+
+    if (age < 1 || age > 120) {
+        return false;
+    }
+
+    return true;
+}
+
+
+// 4. Validate Password
+function isValidPassword(password) {
+    if (typeof password !== "string") {
+        return false;
+    }
+
+    if (password.length < 8) {
+        return false;
+    }
+
+    return true;
+}
+
+
+// 5. Validate Number
+function isValidNumber(number) {
+    if (typeof number !== "number") {
+        return false;
+    }
+
+    if (!Number.isFinite(number)) {
+        return false;
+    }
+
+    return true;
+}
+
+
+// Testing the functions
+
+console.log("Empty Check:", isEmpty(""));
+
+console.log("Email Check:", isValidEmail("student@gmail.com"));
+
+console.log("Age Check:", isValidAge(20));
+
+console.log("Password Check:", isValidPassword("hello123"));
+
+console.log("Number Check:", isValidNumber(100));
