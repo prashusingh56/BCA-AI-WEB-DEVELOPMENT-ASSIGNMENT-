@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Debugging</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fa;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #3730a3;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 6px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>JavaScript Debugging Practice</h1>
+
+        <p>
+            This program calculates the total and average of three marks.
+            The corrected code handles invalid input and calculates results.
+        </p>
+
+        <form id="marksForm">
+            <label for="mark1">Subject 1 Marks</label>
+            <input type="number" id="mark1" min="0" max="100" required>
+
+            <label for="mark2">Subject 2 Marks</label>
+            <input type="number" id="mark2" min="0" max="100" required>
+
+            <label for="mark3">Subject 3 Marks</label>
+            <input type="number" id="mark3" min="0" max="100" required>
+
+            <button type="submit">Calculate Results</button>
+        </form>
+
+        <div class="result" id="result" aria-live="polite">
+            Enter marks and click Calculate Results.
+        </div>
+    </div>
+
+    <script>
+        // Fixed: use a valid event listener.
+        document.getElementById("marksForm")
+            .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            // Fixed: convert input strings into numbers.
+            const mark1 = Number(document.getElementById("mark1").value);
+            const mark2 = Number(document.getElementById("mark2").value);
+            const mark3 = Number(document.getElementById("mark3").value);
+
+            const result = document.getElementById("result");
+
+            // Fixed: validate every mark.
+            if (
+                mark1 < 0 || mark1 > 100 ||
+                mark2 < 0 || mark2 > 100 ||
+                mark3 < 0 || mark3 > 100
+            ) {
+                result.textContent =
+                    "Error: Each mark must be between 0 and 100.";
+                return;
+            }
+
+            // Fixed: calculate the total correctly.
+            const total = mark1 + mark2 + mark3;
+
+            // Fixed: calculate average using all three subjects.
+            const average = total / 3;
+
+            let status;
+
+            if (average >= 33 &&
+                mark1 >= 33 &&
+                mark2 >= 33 &&
+                mark3 >= 33) {
+                status = "Pass";
+            } else {
+                status = "Fail";
+            }
+
+            result.textContent =
+                "Total Marks: " + total + " / 300 | " +
+                "Average: " + average.toFixed(2) + " | " +
+                "Result: " + status;
+        });
+    </script>
+
+</body>
+</html>
