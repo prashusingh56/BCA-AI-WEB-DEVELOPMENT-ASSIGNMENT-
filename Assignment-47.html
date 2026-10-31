@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Footer Design</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .footer-section {
+            min-width: 180px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: orange;
+        }
+
+        .footer-section a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .footer-section a:hover {
+            color: orange;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid gray;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<footer>
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2>About Us</h2>
+            <p>We provide quality services<br>to our customers.</p>
+        </div>
+
+        <div class="footer-section">
+            <h2>Quick Links</h2>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="footer-section">
+            <h2>Contact</h2>
+            <p>Email: example@gmail.com</p>
+            <p>Phone: 9876543210</p>
+        </div>
+
+        <div class="footer-section">
+            <h2>Follow Us</h2>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>© 2026 My Website. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
