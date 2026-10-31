@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6366f1, #312e81);
+            padding: 30px;
+        }
+
+        .form-container {
+            max-width: 450px;
+            background: white;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #3730a3;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            background: #4f46e5;
+            color: white;
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #312e81;
+        }
+
+        #message {
+            text-align: center;
+            color: green;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h1>Contact Us</h1>
+
+        <form id="contactForm">
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" required>
+
+            <label for="messageInput">Message</label>
+            <textarea id="messageInput" required></textarea>
+
+            <button type="submit">Send Message</button>
+
+        </form>
+
+        <p id="message" aria-live="polite"></p>
+
+    </div>
+
+    <script>
+        document.getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+
+            const message = document.getElementById("messageInput").value.trim();
+
+            if (!name || !message) {
+                document.getElementById("message").textContent =
+                    "Please fill all fields.";
+                return;
+            }
+
+            document.getElementById("message").textContent =
+                "Thank you, " + name + "! Your form is ready.";
+
+            this.reset();
+        });
+    </script>
+
+</body>
+              </html>
