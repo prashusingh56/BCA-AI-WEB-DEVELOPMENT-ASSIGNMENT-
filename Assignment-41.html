@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #312e81;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            min-height: 85vh;
+            background: linear-gradient(135deg, #6366f1, #312e81);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+        }
+
+        .btn {
+            background: white;
+            color: #312e81;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #ddd;
+        }
+
+        @media(max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>MyWebsite</h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Welcome to Our Website</h1>
+
+        <p>
+            Learn new skills, explore opportunities and build
+            your future with our learning platform.
+        </p>
+
+        <a href="#about" class="btn">Get Started</a>
+    </section>
+
+    <section id="about" style="padding:40px;text-align:center;">
+        <h2>About Us</h2>
+        <p>We help students learn and grow through technology.</p>
+    </section>
+
+    <footer id="contact" style="text-align:center;padding:20px;">
+        <p>Contact: info@example.com</p>
+    </footer>
+
+</body>
+</html>
